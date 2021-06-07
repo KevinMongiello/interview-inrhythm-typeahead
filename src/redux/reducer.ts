@@ -1,25 +1,25 @@
 import { Reducer } from 'redux';
 import {
-  OVERVIEW_RECEIVED, 
+  COUNTRIES_RECEIVED, 
 } from './actions';
 
 export interface ISampleReducerState {
-  stocks: any;
+  countries: any;
 }
 
 const initialState: ISampleReducerState = {
-  stocks: [],
+  countries: [],
 };
 
 export const sampleReducer: Reducer<ISampleReducerState> = (state = initialState, action) => {
   switch (action.type) {
-    case OVERVIEW_RECEIVED:
-      const newStocks = [action.data];
+    case COUNTRIES_RECEIVED:
+      // TODO: write your redux code here
 
-      return { 
+      return {
         ...state,
-        stocks: newStocks,
-      };
+        countries: action.data
+      }
   
     default:
       return state;
