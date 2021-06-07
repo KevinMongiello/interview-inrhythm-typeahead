@@ -15,7 +15,6 @@ export const sampleReducer: Reducer<ISampleReducerState> = (state = initialState
   switch (action.type) {
     case COUNTRIES_RECEIVED:
       // TODO: write your redux code here
-      debugger;
 
       return {
         ...state,

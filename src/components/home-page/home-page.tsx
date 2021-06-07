@@ -8,6 +8,7 @@ export interface IHomePage { }
 
 export const HomePage: React.FC<IHomePage> = (props) => {
   // const [isLoaded, setIsLoaded] = useState<boolean>(false);
+  const [country, setCountry] = useState<string>('test');
   const countries = useSelector((state: IStoreState) => state.sampleReducer.countries);
   const dispatch = useDispatch();
 
@@ -22,10 +23,19 @@ export const HomePage: React.FC<IHomePage> = (props) => {
   //   return null;
   // }
 
+  const handleClick = (choice: string) => {
+    debugger;
+    setCountry(choice);
+  }
+
   return (
     <div>
       <h1>Home</h1>
-      <Typeahead options={countries} />
+      {country}
+      <Typeahead 
+        options={countries} 
+        onClick={handleClick}
+      />
     </div>
   );
 }

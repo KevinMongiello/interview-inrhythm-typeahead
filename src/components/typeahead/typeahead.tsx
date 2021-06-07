@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react';
-import { options } from 'yargs';
+
+import './typeahead.css';
 
 export interface ITypeahead {
   options: string[];
+  onClick: (choice: string) => void; 
 }
 
 export const Typeahead: React.FC<ITypeahead> = (props) => {
-  const { options } = props;
+  const { onClick, options } = props;
 
 //   useEffect(() => {
 //     (async () => {
@@ -14,8 +16,6 @@ export const Typeahead: React.FC<ITypeahead> = (props) => {
 //     })()
 //   }, [])
   
-  debugger;
-
   return (
     <div>
       <div>
@@ -25,12 +25,15 @@ export const Typeahead: React.FC<ITypeahead> = (props) => {
         <ul>
           {options.map(option => {
             return (
-              <li key={option}>{option}</li>
+              <li key={option}>
+                <a href="#" onClick={() => onClick(option)}>
+                  {option}
+                </a>
+              </li>
             )
           })}
         </ul>
       </div>
-      {/* <pre>{JSON.stringify(props.options, null, '  ')}</pre> */}
     </div>
   );
 }
