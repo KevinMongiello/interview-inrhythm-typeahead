@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 
-import { getCountries, IStoreState } from '../redux';
+import { Typeahead } from '../typeahead/typeahead';
+import { getCountries, IStoreState } from '../../redux';
 
 export interface IHomePage { }
 
@@ -18,7 +19,7 @@ export const HomePage: React.FC<IHomePage> = (props) => {
   return (
     <div>
       <h1>Home</h1>
-      <pre>{JSON.stringify(countries, null, '  ')}</pre>
+      <Typeahead options={countries} />
     </div>
   );
 }

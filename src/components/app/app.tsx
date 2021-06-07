@@ -2,10 +2,10 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Link, Redirect, Route, Switch } from 'react-router-dom';
 
-import { configureStore } from '../redux';
+import { configureStore } from '../../redux';
 import './app.css';
 
-import { HomePage } from './home-page';
+import { HomePage } from '../home-page/home-page';
 
 const store = configureStore();
 
