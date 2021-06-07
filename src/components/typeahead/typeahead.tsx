@@ -10,9 +10,11 @@ export interface ITypeahead {
 export const Typeahead: React.FC<ITypeahead> = (props) => {
   const { onClick, options } = props;
   const [searchText, setSearchText] = useState<string>('');
+  const [filteredOptions, setFilteredOptions] = useState<string[]>([]);
 
   const handleType = (event: any) => {
     setSearchText(event.target.value);
+    // const filtered = options.filter(option => )
   }
   
   return (
