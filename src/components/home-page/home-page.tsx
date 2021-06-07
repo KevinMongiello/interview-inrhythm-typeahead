@@ -8,7 +8,7 @@ export interface IHomePage { }
 
 export const HomePage: React.FC<IHomePage> = (props) => {
   // const [isLoaded, setIsLoaded] = useState<boolean>(false);
-  const [country, setCountry] = useState<string>('test');
+  const [country, setCountry] = useState<string>('');
   const countries = useSelector((state: IStoreState) => state.sampleReducer.countries);
   const dispatch = useDispatch();
 

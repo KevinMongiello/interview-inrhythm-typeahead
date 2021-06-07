@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import './typeahead.css';
 
@@ -9,24 +9,24 @@ export interface ITypeahead {
 
 export const Typeahead: React.FC<ITypeahead> = (props) => {
   const { onClick, options } = props;
+  const [searchText, setSearchText] = useState<string>('');
 
-//   useEffect(() => {
-//     (async () => {
-//       await dispatch(getCountries());
-//     })()
-//   }, [])
+  const handleType = (event: any) => {
+    setSearchText(event.target.value);
+  }
   
   return (
     <div>
       <div>
-        <input type="text" />
+        <input type="text" onChange={handleType} value={searchText} />
+        {searchText}
       </div>
       <div>
         <ul>
           {options.map(option => {
             return (
               <li key={option}>
-                <a href="#" onClick={() => onClick(option)}>
+                <a onClick={() => onClick(option)}>
                   {option}
                 </a>
               </li>
