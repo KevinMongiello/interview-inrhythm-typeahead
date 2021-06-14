@@ -49,7 +49,7 @@ jobs:
           # Required recipients' addresses:
           to: kmong92@gmail.com
           # Required sender full name (address can be skipped):
-          from: KM Dev <${{secrets.MAIL_USERNAME}}>
+          from: KM Dev <kmongdev@gmail.com>
           # Optional whether this connection use TLS (default is true if server_port is 465)
           secure: true
           # Optional plain body:
